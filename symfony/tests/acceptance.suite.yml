@@ -8,7 +8,7 @@ class_name: AcceptanceTester
 modules:
     enabled:
 #        - PhpBrowser:
-#            url: http://localhost/myapp
+#            url: http://songbird.app
         - WebDriver:
             url: 'http://songbird.app'
             host: 172.25.0.5

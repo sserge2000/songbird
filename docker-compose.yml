@@ -25,6 +25,8 @@ services:
         networks:
             mynet:
                 ipv4_address: 172.25.0.3
+        extra_hosts:
+            - "${DOMAIN}:172.25.0.4"
     php_cli:
         build: php7-cli
         ports:
@@ -35,6 +37,8 @@ services:
             mynet:
                 ipv4_address: 172.25.0.6
         entrypoint: php bin/console server:run 0.0.0.0:8000
+        extra_hosts:
+          - "${DOMAIN}:172.25.0.4"
     php_cli_xdebug:
         build: php7-cli-xdebug
         ports:
@@ -45,7 +49,8 @@ services:
             mynet:
                 ipv4_address: 172.25.0.7
         entrypoint: php bin/console server:run 0.0.0.0:8000
-
+        extra_hosts:
+            - "${DOMAIN}:172.25.0.4"
     nginx:
         build: nginx
         ports:

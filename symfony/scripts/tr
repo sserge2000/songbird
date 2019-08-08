@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DIR=$(dirname "$0")
+#echo $DIR
+#ls "$DIR"/../var
+sudo chmod 777 -R "$DIR"/../var

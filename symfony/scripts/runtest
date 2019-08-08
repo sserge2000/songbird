@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DIR=$(dirname "$0")
+
+docker-compose exec php bin/console cache:clear --no-warmup
+sudo chmod 777 -R "$DIR"/../var
+
+docker-compose exec php vendor/bin/codecept run acceptance
